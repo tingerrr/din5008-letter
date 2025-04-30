@@ -1,0 +1,4 @@
+name = "Max Mustermann"
+address = "Musterstraße 1, 11111 Musterstadt"
+email = "max@mustermann.de" # optional
+mobile = "+49 111 11111111" # optional

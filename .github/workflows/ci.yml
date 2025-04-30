@@ -1,0 +1,27 @@
+name: Check integrity of CV
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-compilation:
+    name: Check compilation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install just
+        uses: taiki-e/install-action@v2
+        with:
+          tool: just
+
+      - name: Install typst
+        uses: typst-community/setup-typst@v3
+        with:
+          typst-version: 0.13
+
+      - name: Check compilation
+        run: just ci
